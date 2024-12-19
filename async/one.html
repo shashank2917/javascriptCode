@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+   //setTimeout(function(){
+    //console.log('my name is shashank srivastava')
+  // },2000)  // it ask give me time of 2 sec and then i will execute this
+ 
+ 
+   setInterval(function(){
+    //console.log('shashank')
+ },1000) // it says i will continuosly do this work in given time again and again
+
+const fn=function(){
+    console.log("shashank")
+}
+
+//setTimeout(fn,1000) // here we give referrence of the fn
+
+const newfn=function(){
+   // document.querySelector('h1').innerHTML="shashank"
+}
+
+//const cleartime=setTimeout(newfn,2000)
+
+document.querySelector('#stop').addEventListener('click',function(){
+   // clearTimeout(cleartime)
+    console.log('stopped')   // it will remove all the callback from the queue
+
+
+})
+
+
+</script>
+</html>

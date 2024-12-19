@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+        >Youtube channel</a
+      >
+    </nav>
+
+    <h1>Start should change the Background color every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script src="chaiaurcode.js"></script>
+  </body>
+  <script>
+
+    const randomcolor=function(){
+      
+     let color='0123456789ABCDEF'
+     let hex='#'
+     for(let i=0;i<6;i++)
+     {
+        hex+=color[Math.floor(Math.random()*16)]; 
+     }
+    return hex
+     };
+
+     let interval;
+     let changebgcolor=function(){
+        document.body.style.backgroundColor=randomcolor();
+    };
+     const startchangingcolor=function(){
+        if(!interval)
+        {
+            interval=setInterval(changebgcolor,1000)          // better aproach means if reference kisi kam me ni aa ra too null rkh do memory free krne ke lie
+        }
+        
+     }
+     
+
+     const stopchangingcolor=function(){
+        clearInterval(interval);
+        interval=null;
+     }
+     document.querySelector('#start').addEventListener('click',startchangingcolor);
+     document.querySelector('#stop').addEventListener('click',stopchangingcolor);
+
+
+  </script>
+</html>
