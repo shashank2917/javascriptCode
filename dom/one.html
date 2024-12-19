@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- this is a comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday<span>hllo</span></div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const  parent=document.querySelector('.parent');
+    console.log(parent);
+    //console.log(parent.children);    //It will give html collection of all children of class parent
+    //console.log(parent.children[1].innerHTML)  // It will give second children inner data
+
+    parent.children[1].style.color="orange"
+    //console.log(parent.firstElementChild); // It will give first child of the cclass parent 
+    
+    const dayone=document.querySelector('.day')
+    console.log(dayone) // iT will give div of monday
+    console.log(dayone.parentElement) //IT will give parent of dayone
+    console.log(dayone.nextElementSibling); // It will give second element or next element
+
+    console.log("TOTAL NODES : ",parent.childNodes); // it will give all nodes which is defined in complex tree structure
+
+</script>
+</html>

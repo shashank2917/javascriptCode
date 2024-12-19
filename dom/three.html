@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+        
+        
+        </ul>
+</body>
+
+<script>
+   
+ function addlang(langname){
+    const li=document.createElement('li');
+    li.innerHTML=`${langname}`;
+    document.querySelector('.language').appendChild(li)  // first approach here we need to traverse the tree  and less optimised
+
+ }
+
+ addlang("cpp");
+ addlang("python");
+
+
+ function addnextele(langname){
+    const li=document.createElement('li');
+    li.appendChild(document.createTextNode(langname))  // second approach and optimised one
+    document.querySelector('.language').appendChild(li)
+
+ }
+
+ addnextele("golang");
+ addnextele("ruby");
+
+
+ //EDIT
+
+ const edit=document.querySelector('li:nth-child(2)')
+ //edit.innerHTML='mOJO';
+ const newelmnt=document.createElement('li')
+ newelmnt.textContent='MOJO'
+ edit.replaceWith(newelmnt)
+
+ const edit1=document.querySelector('li:nth-child(1)')// we can write li:first-child
+ const newele=document.createElement('li')
+ newele.textContent='TYPESCRIPT';
+ edit1.replaceWith(newele)
+
+
+ //REMOVE
+
+ const lastlang=document.querySelector('li:last-child')
+ lastlang.remove()
+</script>
+</html>

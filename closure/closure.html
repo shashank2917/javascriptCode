@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+    <script>
+    // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();             // it will print name
+
+
+    
+
+    ;
+
+
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;    it return the reference of the fn 
+    // }               
+
+    // const myFunc = makeFunc();
+    // myFunc();
+
+    //yha pe jab ham myfunc ko call karte hai too outer fn exicute hota hai too mtlb outer fn ka scope gyb too ab kese milega data inner fn ko too wha pe closure ka concept introduce hota hai 
+    // when we return displayname then not only that fn will return the returned fn. it will return whole lexical scope which means we can print name which is initialised in outer fn.
+    //   
+    </script>
+    <script>
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){            //if we dont use fn then it will make background colorful without clicking because onclick event  expect fn as a return we exicute it . so we made a fn based on closure concept
+                document.body.style.backgroundColor = `${color}`
+            }
+        }   //n
+
+        document.getElementById('orange').onclick = clickHandler("orange")  //here clickhandler return the fn which have access of lexical scope which means returned fn can access color which is defined in outer fn.
+        document.getElementById('green').onclick = clickHandler("green")
+
+    </script>
+</html>

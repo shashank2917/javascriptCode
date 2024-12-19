@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+ const div= document.createElement('div') // It is used to create element 
+  console.log(div) 
+  div.className='main'
+  div.id=Math.round(Math.random()*10+1)
+  div.setAttribute("title","Generate title") // ye value ko leke ni ata,directly set kar deta hai
+  div.style.backgroundColor='green'
+  div.style.padding='12px'
+ // div.innerHTML='Chay or code' //phle ye value ko leke ata hai phir use overwrite krta hai
+  const addtext=document.createTextNode("CHAY OR CODE")
+  div.appendChild(addtext) //It is second way to add text
+
+  document.body.appendChild(div);
+
+</script>
+</html>
